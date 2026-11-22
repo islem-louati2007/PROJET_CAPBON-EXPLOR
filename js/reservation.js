@@ -76,7 +76,7 @@ function vider() {
   document.getElementById("err").innerText = "";
   document.getElementById("recap").innerText = "";
   document.getElementById("pu").innerText = "0 TND";
-  document.getElementById("nbPersonnes").innerText = "0";
+  document.getElementById("nbper").innerText = "0";   
   document.getElementById("st").innerText = "0 TND";
   document.getElementById("rem").innerText = "0 TND";
   document.getElementById("tot").innerText = "0 TND";
