@@ -17,7 +17,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark site-navbar fw-bold">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="image/capbon.jpeg" alt="Logo" width="50" />
+            <img src="images/capbon.jpeg" alt="Logo" width="50" />
             Cap Bon Explorer
           </a>
           <button
@@ -25,6 +25,9 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#menuNav"
+            aria-controls="menuNav"
+            aria-expanded="false"
+            aria-label="Afficher la navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -64,7 +67,7 @@
           <li>Samedi :<strong>09h00 - 13h00</strong></li>
           <li>Dimanche : <strong>Fermé</strong></li>
         </ul>
-        <img src="images/a05.svg" />
+        <img src="images/littoral.jpg" />
       </section>
 
       <section class="card card-body" id="msg">
@@ -172,22 +175,5 @@
     </footer>
 
     <script src="js/app.js"></script>
-    <script>
-      var cok = document.getElementById("cok");
-      cok.style.display = "none";
-      var fc = document.getElementById("f-contact");
-      fc.onsubmit = function (e) {
-        e.preventDefault();
-        if (
-          document.getElementById("cnom").value != "" &&
-          document.getElementById("cemail").value.indexOf("@") != -1 &&
-          document.getElementById("csujet").value != "" &&
-          document.getElementById("cmsg").value != ""
-        ) {
-          cok.style.display = "block";
-          fc.reset();
-        }
-      };
-    </script>
   </body>
 </html>

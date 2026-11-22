@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Accueill</title>
+    <title>Accueil</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark site-navbar fw-bold">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="image/capbon.jpeg" alt="Logo" width="50"/>
+            <img src="images/capbon.jpeg" alt="Logo" width="50" />
             Cap Bon Explorer
           </a>
 
@@ -25,11 +24,14 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#menuNav"
+            aria-controls="menuNav"
+            aria-expanded="false"
+            aria-label="Afficher la navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" >
+          <div class="collapse navbar-collapse" id="menuNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
                 <a class="nav-link active" href="index.html">Accueil</a>
@@ -67,45 +69,41 @@
         </div>
       </section>
 
-      
       <section>
         <div class="container" id="qui">
-              <h2 class="section-title">Qui sommes-nous ?</h2>
-              <p>
-                Cap Bon Explorer est un portail touristique fictif consacré à la
-                région du Cap Bon. Il présente des sorties culturelles, des
-                ateliers d'artisanat et des activités en pleine nature. Notre
-                objectif est de faire découvrir les lieux connus et les
-                savoir-faire locaux à travers des informations faciles à
-                consulter.
-              </p>
-              <p class="mb-0">
-                Le site permet de rechercher une activité, de consulter son
-                descriptif et de voir les événements proposés dans l'agenda.
-                Vous pouvez aussi remplir un formulaire pour calculer le prix
-                d'une sortie selon le nombre de participants. La réservation
-                reste une simulation et aucune donnée n'est envoyée.
-              </p>
-            <div class="col-lg-5">
-              <img
-                src="images/a05.svg"
-                class="img-fluid rounded"
-                alt="Paysage"
-              />
-            </div>
-          
+          <h2 class="section-title">Qui sommes-nous ?</h2>
+          <p>
+            Cap Bon Explorer est un portail touristique fictif consacré à la
+            région du Cap Bon. Il présente des sorties culturelles, des ateliers
+            d'artisanat et des activités en pleine nature. Notre objectif est de
+            faire découvrir les lieux connus et les savoir-faire locaux à
+            travers des informations faciles à consulter.
+          </p>
+          <p class="mb-0">
+            Le site permet de rechercher une activité, de consulter son
+            descriptif et de voir les événements proposés dans l'agenda. Vous
+            pouvez aussi remplir un formulaire pour calculer le prix d'une
+            sortie selon le nombre de participants. La réservation reste une
+            simulation et aucune donnée n'est envoyée.
+          </p>
+          <div class="col-lg-5 mt-3">
+            <img src="images/littoral.jpg" class="img-fluid rounded" />
+          </div>
         </div>
       </section>
 
-      
       <section>
-        <div class="container"  id="ac">
-          <h2 class= "titre ">Activités mises en avant</h2>
+        <div class="container" id="ac">
+          <h2 class="titre">Activités mises en avant</h2>
 
           <div class="row g-3">
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card h-100">
-                <img src="image/medina.jpeg" class="card-img-top" alt="medina" />
+                <img
+                  src="images/medina.jpeg"
+                  class="card-img-top"
+                  alt="medina"
+                />
                 <div class="card-body d-flex flex-column">
                   <h3 class="card-title h5">Découverte de la médina</h3>
                   <p class="card-text">
@@ -121,7 +119,11 @@
 
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card h-100">
-                <img src="image/poterie.webp" class="card-img-top" alt="poterie" />
+                <img
+                  src="images/poterie.webp"
+                  class="card-img-top"
+                  alt="poterie"
+                />
                 <div class="card-body d-flex flex-column">
                   <h3 class="card-title h5">Atelier de poterie</h3>
                   <p class="card-text">
@@ -137,7 +139,11 @@
 
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card h-100">
-                <img src="image/littoral.jpg" class="card-img-top" alt="littoral" />
+                <img
+                  src="images/littoral.jpg"
+                  class="card-img-top"
+                  alt="littoral"
+                />
                 <div class="card-body d-flex flex-column">
                   <h3 class="card-title h5">Circuit du littoral</h3>
                   <p class="card-text">
@@ -154,7 +160,7 @@
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card h-100">
                 <img
-                  src="image/hammamet.jpeg"
+                  src="images/hammamet.jpeg"
                   class="card-img-top"
                   alt="promenade"
                 />
@@ -174,57 +180,51 @@
         </div>
       </section>
 
-     
-      <section >
-        <div class="container"   id="dec">
-              <h2 class="titre mb-3">Pourquoi découvrir le Cap Bon ?</h2>
-              <ul>
-                <li>
-                  <strong>Un patrimoine historique :</strong>
-                  La médina de Nabeul et le site de Kerkouane racontent
-                  l'histoire de la région.
-                </li>
-                <li>
-                  <strong>Des savoir-faire locaux :</strong>
-                  La poterie et la céramique font partie des traditions de
-                  Nabeul.
-                </li>
-                <li>
-                  <strong>Des paysages variés :</strong>
-                  La région réunit plages, collines et espaces naturels.
-                </li>
-                <li>
-                  <strong>Des sorties accessibles :</strong>
-                  Les activités proposées ont des durées et des tarifs indiqués.
-                </li>
-              </ul>
+      <section>
+        <div class="container" id="dec">
+          <h2 class="titre mb-3">Pourquoi découvrir le Cap Bon ?</h2>
+          <ul>
+            <li>
+              <strong>Un patrimoine historique :</strong>
+              La médina de Nabeul et le site de Kerkouane racontent l'histoire
+              de la région.
+            </li>
+            <li>
+              <strong>Des savoir-faire locaux :</strong>
+              La poterie et la céramique font partie des traditions de Nabeul.
+            </li>
+            <li>
+              <strong>Des paysages variés :</strong>
+              La région réunit plages, collines et espaces naturels.
+            </li>
+            <li>
+              <strong>Des sorties accessibles :</strong>
+              Les activités proposées ont des durées et des tarifs indiqués.
+            </li>
+          </ul>
         </div>
       </section>
 
       <div class="p-4 my-4 border rounded text-center" id="box">
         <h2>Préparez votre visite</h2>
-        <p> Choisissez une activité et calculez le montant selon le nombre de
-          participants</p>
-          <a href="reservation.html" class="btn btn-main link">
-            Simuler une réservation
-          </a>
+        <p>
+          Choisissez une activité et calculez le montant selon le nombre de
+          participants
+        </p>
+        <a href="reservation.html" class="btn btn-main link">
+          Simuler une réservation
+        </a>
       </div>
     </main>
 
-    
     <footer>
       <p>Découvrir le Cap Bon, une expérience à la fois.</p>
-      <p> © 2026 Cap Bon Explorer</p>
+      <p>© 2026 Cap Bon Explorer</p>
       <a href="index.html">Accueil</a>
       <a href="activites.html">Activités</a>
       <a href="agenda.html">Agenda</a>
       <a href="reservation.html">Réservation</a>
       <a href="contact.html">Contact</a>
-    
-    
-      
     </footer>
-
-
   </body>
 </html>

@@ -16,7 +16,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark site-navbar fw-bold">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="image/capbon.jpeg" alt="Logo" width="50"/>
+            <img src="images/capbon.jpeg" alt="Logo" width="50" />
             Cap Bon Explorer
           </a>
           <button
@@ -24,6 +24,9 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#menuNav"
+            aria-controls="menuNav"
+            aria-expanded="false"
+            aria-label="Afficher la navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -51,7 +54,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="container">
       <div>
         <h1 class="titre">Nos expériences phares</h1>
         <label>Recherche </label>
@@ -67,20 +70,25 @@
         </select>
 
         <p id="compteur">Activités affichées : <span id="nb">8</span></p>
-        <p id="aucun" hidden>Aucune activité trouvée</p>
+        <p id="aucun" class="alert alert-warning" hidden>
+          Aucune activité trouvée
+        </p>
       </div>
+
       <div id="liste" class="row g-3">
         <div class="col-12 col-md-6 col-lg-3" name="catre">
-          <div class="card">
-            <img src="image/medina.jpeg" class="card-img-top" alt="medina" />
+          <div class="card h-100">
+            <img src="images/medina.jpeg" class="card-img-top" alt="medina" />
             <div class="card-body">
               <h3>Découverte de la médina — Nabeul</h3>
               <p>Culture - 2 h - 20 TND</p>
               <a href="reservation.html" class="btn btn-primary">Réserver</a>
               <button
                 type="button"
-                onclick="details('A01')"
                 class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
+                onclick="afficherDetails('A01')"
               >
                 Voir détails
               </button>
@@ -89,16 +97,18 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3" name="catre">
-          <div class="card">
-            <img src="image/poterie.webp" class="card-img-top" alt="^poterie" />
+          <div class="card h-100">
+            <img src="images/poterie.webp" class="card-img-top" alt="poterie" />
             <div class="card-body">
               <h3>Atelier d'initiation à la poterie — Nabeul</h3>
               <p>Artisanat - 1 h 30 - 35 TND</p>
               <a href="reservation.html" class="btn btn-primary">Réserver</a>
               <button
                 type="button"
-                onclick="details('A02')"
                 class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
+                onclick="afficherDetails('A02')"
               >
                 Voir détails
               </button>
@@ -107,16 +117,22 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3" name="catre">
-          <div class="card">
-            <img src="image/kerkouane.jpg" class="card-img-top" alt="kerkouane" />
+          <div class="card h-100">
+            <img
+              src="images/kerkouane.jpg"
+              class="card-img-top"
+              alt="kerkouane"
+            />
             <div class="card-body">
               <h3>Parcours découverte de Kerkouane — Kerkouane</h3>
               <p>Culture - 2 h 30 - 30 TND</p>
               <a href="reservation.html" class="btn btn-primary">Réserver</a>
               <button
                 type="button"
-                onclick="details('A03')"
                 class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
+                onclick="afficherDetails('A03')"
               >
                 Voir détails
               </button>
@@ -125,16 +141,22 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3" name="catre">
-          <div class="card">
-            <img src="image/randonnee.jpeg" class="card-img-top" alt="randonnee" />
+          <div class="card h-100">
+            <img
+              src="images/randonnee.jpeg"
+              class="card-img-top"
+              alt="randonnee"
+            />
             <div class="card-body">
               <h3>Randonnée découverte — Djebel Abderrahmane</h3>
               <p>Nature - 3 h - 25 TND</p>
               <a href="reservation.html" class="btn btn-primary">Réserver</a>
               <button
                 type="button"
-                onclick="details('A04')"
                 class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
+                onclick="afficherDetails('A04')"
               >
                 Voir détails
               </button>
@@ -143,16 +165,22 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3" name="catre">
-          <div class="card">
-            <img src="image/littoral.jpg" class="card-img-top" alt="littoral" />
+          <div class="card h-100">
+            <img
+              src="images/littoral.jpg"
+              class="card-img-top"
+              alt="littoral"
+            />
             <div class="card-body">
               <h3>Circuit du littoral — Kélibia</h3>
               <p>Nature - 3 h - 40 TND</p>
               <a href="reservation.html" class="btn btn-primary">Réserver</a>
               <button
                 type="button"
-                onclick="details('A05')"
                 class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
+                onclick="afficherDetails('A05')"
               >
                 Voir détails
               </button>
@@ -161,16 +189,22 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3" name="catre">
-          <div class="card">
-            <img src="image/ceramique.jpeg" class="card-img-top" alt="cermique" />
+          <div class="card h-100">
+            <img
+              src="images/ceramique.jpeg"
+              class="card-img-top"
+              alt="ceramique"
+            />
             <div class="card-body">
               <h3>Peinture sur céramique — Nabeul</h3>
               <p>Artisanat - 2 h - 25 TND</p>
               <a href="reservation.html" class="btn btn-primary">Réserver</a>
               <button
                 type="button"
-                onclick="details('A06')"
                 class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
+                onclick="afficherDetails('A06')"
               >
                 Voir détails
               </button>
@@ -179,16 +213,18 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3" name="catre">
-          <div class="card">
-            <img src="image/marche.jpeg" class="card-img-top" alt="marche" />
+          <div class="card h-100">
+            <img src="images/marche.jpeg" class="card-img-top" alt="marche" />
             <div class="card-body">
               <h3>Découverte d'un marché local — Nabeul</h3>
               <p>Découverte - 1 h 30 - 15 TND</p>
               <a href="reservation.html" class="btn btn-primary">Réserver</a>
               <button
                 type="button"
-                onclick="details('A07')"
                 class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
+                onclick="afficherDetails('A07')"
               >
                 Voir détails
               </button>
@@ -197,16 +233,22 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3" name="catre">
-          <div class="card">
-            <img src="image/hammamet.jpeg" class="card-img-top" alt="hammamet" />
+          <div class="card h-100">
+            <img
+              src="images/hammamet.jpeg"
+              class="card-img-top"
+              alt="hammamet"
+            />
             <div class="card-body">
               <h3>Promenade photographique — Hammamet</h3>
               <p>Découverte - 2 h - 30 TND</p>
               <a href="reservation.html" class="btn btn-primary">Réserver</a>
               <button
                 type="button"
-                onclick="details('A08')"
                 class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
+                onclick="afficherDetails('A08')"
               >
                 Voir détails
               </button>
@@ -225,6 +267,42 @@
           Simuler une réservation
         </a>
       </div>
+
+      <div
+        class="modal fade"
+        id="modalDetails"
+        tabindex="-1"
+        aria-labelledby="titreFen"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fs-5" id="titreFen"></h3>
+              <button
+                class="btn-close"
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Fermer"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p class="fw-bold" id="catFen"></p>
+              <p id="descFen"></p>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-bs-dismiss="modal"
+              >
+                Fermer
+              </button>
+              <a href="reservation.html" class="btn btn-primary">Réserver</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -236,6 +314,8 @@
       <a href="reservation.html">Réservation</a>
       <a href="contact.html">Contact</a>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/activites.js"></script>
   </body>

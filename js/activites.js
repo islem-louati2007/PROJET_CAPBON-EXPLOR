@@ -1,104 +1,87 @@
-const tab = [
-  {
-    id: "A01",
+var infos = {
+  A01: {
+    cat: "Culture",
     titre: "Découverte de la médina — Nabeul",
-    categorie: "Culture",
-    description:
-      "Parcourez les ruelles historiques de la médina de Nabeul avec un guide local. Découvrez l'architecture traditionnelle et les souks animés. Une sortie idéale pour connaître l'histoire de la ville.",
+    desc: "Visite dans les ruelles de la médina de Nabeul et découverte des souks traditionnels (2 h - 20 TND).",
   },
-  {
-    id: "A02",
+  A02: {
+    cat: "Artisanat",
     titre: "Atelier d'initiation à la poterie — Nabeul",
-    categorie: "Artisanat",
-    description:
-      "Découvrez le travail de l'argile dans un atelier traditionnel à Nabeul. Apprenez les bases du façonnage avec un artisan potier. Vous repartez avec votre propre création.",
+    desc: "Découverte du travail de l'argile et de la poterie avec un artisan local (1 h 30 - 35 TND).",
   },
-  {
-    id: "A03",
+  A03: {
+    cat: "Culture",
     titre: "Parcours découverte de Kerkouane — Kerkouane",
-    categorie: "Culture",
-    description:
-      "Visitez le site archéologique punique de Kerkouane près de la mer. Observez les vestiges des maisons antiques et des rues d'époque. Un lieu riche en histoire et en patrimoine.",
+    desc: "Visite des ruines puniques de Kerkouane au bord de la mer (2 h 30 - 30 TND).",
   },
-  {
-    id: "A04",
+  A04: {
+    cat: "Nature",
     titre: "Randonnée découverte — Djebel Abderrahmane",
-    categorie: "Nature",
-    description:
-      "Marchez au milieu des sentiers naturels du Djebel Abderrahmane. Profitez d'une belle vue sur les paysages du Cap Bon. Une balade agréable en plein air.",
+    desc: "Balade à pied en pleine nature avec vue sur le Cap Bon (3 h - 25 TND).",
   },
-  {
-    id: "A05",
+  A05: {
+    cat: "Nature",
     titre: "Circuit du littoral — Kélibia",
-    categorie: "Nature",
-    description:
-      "Longez la côte et les criques de Kélibia en observant la mer. Découvrez les beaux panoramas autour du fort de Kélibia. Une promenade rafraîchissante en bord de mer.",
+    desc: "Marche le long de la côte et des plages de Kélibia (3 h - 40 TND).",
   },
-  {
-    id: "A06",
+  A06: {
+    cat: "Artisanat",
     titre: "Peinture sur céramique — Nabeul",
-    categorie: "Artisanat",
-    description:
-      "Initiez-vous à la décoration des pièces en céramique à Nabeul. Apprenez à utiliser les couleurs et motifs locaux. Une activité créative et conviviale.",
+    desc: "Décoration d'une pièce en céramique avec des motifs locaux (2 h - 25 TND).",
   },
-  {
-    id: "A07",
+  A07: {
+    cat: "Découverte",
     titre: "Découverte d'un marché local — Nabeul",
-    categorie: "Découverte",
-    description:
-      "Promenez-vous dans le marché local de Nabeul pour voir les produits frais. Rencontrez les vendeurs et découvrez les saveurs de la région. Une immersion simple et authentique.",
+    desc: "Tour au marché local pour voir les produits et épices de la région (1 h 30 - 15 TND).",
   },
-  {
-    id: "A08",
+  A08: {
+    cat: "Découverte",
     titre: "Promenade photographique — Hammamet",
-    categorie: "Découverte",
-    description:
-      "Explorez les ruelles de Hammamet pour prendre de belles photos. Profitez de la lumière et des couleurs de la médina. Une balade idéale pour les amateurs de photo.",
+    desc: "Balade photo dans la vieille ville d'Hammamet et près de la mer (2 h - 30 TND).",
   },
-];
+};
 
-let recherche = document.getElementById("recherche");
-let Cat = document.getElementById("categorie");
-let nb = document.getElementById("nb");
-let aucun = document.getElementById("aucun");
-let car = document.getElementsByName("catre");
+function afficherDetails(code) {
+  var act = infos[code];
+  if (act) {
+    document.getElementById("catFen").innerHTML = act.cat;
+    document.getElementById("titreFen").innerHTML = act.titre;
+    document.getElementById("descFen").innerHTML = act.desc;
+  }
+}
+
+var Recherche = document.getElementById("recherche");
+var listeCat = document.getElementById("categorie");
+var cartes = document.getElementsByName("catre");
+var nbAff = document.getElementById("nb");
+var msgVide = document.getElementById("aucun");
 
 function filtrer() {
-  let mot = recherche.value.toLowerCase();
-  let Choix = Cat.value;
-  let compteur = 0;
+  var mot = Recherche.value.toLowerCase();
+  var cat = listeCat.value;
+  var compteur = 0;
 
-  for (let i = 0; i < car.length; i++) {
-    let carte = car[i].innerText.toLowerCase();
-    let act = tab[i];
-
-    let okMot = carte.includes(mot);
-    let okCat = Choix === "Toutes" || act.categorie === Choix;
+  for (var i = 0; i < cartes.length; i++) {
+    var texte = cartes[i].innerHTML.toLowerCase();
+    var okMot = texte.indexOf(mot) !== -1;
+    var okCat = cat === "Toutes" || texte.indexOf(cat.toLowerCase()) !== -1;
 
     if (okMot && okCat) {
-      car[i].hidden = false;
+      cartes[i].style.display = "";
       compteur++;
     } else {
-      car[i].hidden = true;
+      cartes[i].style.display = "none";
     }
   }
 
-  nb.innerText = compteur;
+  nbAff.innerHTML = compteur;
 
   if (compteur === 0) {
-    aucun.hidden = false;
+    msgVide.hidden = false;
   } else {
-    aucun.hidden = true;
+    msgVide.hidden = true;
   }
 }
 
-recherche.addEventListener("input", filtrer);
-Cat.addEventListener("change", filtrer);
-
-function details(id) {
-  for (let i = 0; i < tab.length; i++) {
-    if (tab[i].id === id) {
-      alert(tab[i].titre + " - " + tab[i].description);
-    }
-  }
-}
+Recherche.addEventListener("input", filtrer);
+listeCat.addEventListener("change", filtrer);
