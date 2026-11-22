@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff5f5;
+  color: black;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+header {
+  background-color: #a9313f;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f09aa5;
+}
+
+header img {
+  height: 36px;
+}
+
+header a {
+  text-decoration: none;
+  margin-left: 12px;
+}
+#box{
+  background-color: #b13241;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.titre{
+  color: #8f3a3a;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+}
+
+
+
+
+th {
+  background-color: #991b1b;
+  color: white;
+}
+
+#err {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#recap, #cok {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 10px;
+  margin-top: 10px;
+}
+.link{
+  background-color:#f09aa5;
+  color: black;
+  border-width:initial;
+  border-color: black;
+  font-size: larger;
+  
+}
+.link:hover{
+  background-color: #991b1b;
+  border-color: #991b1b;
+
+}
+footer {
+  background-color: #450a0a;
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+footer a {
+
+  
+  color: #fca5a5;
+  margin-right: 10px;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #fd0d5d;
+}
+#contact ,#explo{
+  margin-top: 20px;
+  float: left;
+  width: 44%;
+  margin-right: 5px;
+  padding: 20px;
+  margin-left: 5px;
+
+}
+#msg , #qui {
+  margin-top: 20px;
+  float: left;
+  width: 54%;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+#faq , #act ,#dec{
+  width: 100%;
+  padding: 20px;
+  margin-left: 7px;
+  margin-right: 5px;
+}
+header img {
+  width: 45px;
+  height: 45px;
+  border-radius: 20%;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Réservation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark site-navbar fw-bold">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="image/capbon.jpeg" alt="Logo" width="50"/>
+            Cap Bon Explorer
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="menuNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="activites.html">Activités</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="agenda.html">Agenda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="reservation.html">Réservation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <main class="container">
+      <div>
+        <h1 class="titre">Simulateur de réservation</h1>
+        <form id="form">
+          <p><label>Nom</label><br /><input type="text" id="nom" /></p>
+          <p><label>Prénom</label><br /><input type="text" id="prenom" /></p>
+          <p>
+            <label>Adresse e-mail</label><br /><input type="email" id="email" />
+          </p>
+          <p>
+            <label>Téléphone</label><br /><input type="tel" id="tel" />
+          </p>
+
+          <p>
+            <label>Activité choisie</label><br />
+            <select id="act">
+              <option value="20">
+                Découverte de la médina - Nabeul (20 TND)
+              </option>
+              <option value="35">
+                Atelier d'initiation à la poterie - Nabeul (35 TND)
+              </option>
+              <option value="30">
+                Parcours découverte de Kerkouane - Kerkouane (30 TND)
+              </option>
+              <option value="25">
+                Randonnée découverte - Djebel Abderrahmane (25 TND)
+              </option>
+              <option value="40">Circuit du littoral - Kélibia (40 TND)</option>
+              <option value="25">
+                Peinture sur céramique - Nabeul (25 TND)
+              </option>
+              <option value="15">
+                Découverte d'un marché local - Nabeul (15 TND)
+              </option>
+              <option value="30">
+                Promenade photographique - Hammamet (30 TND)
+              </option>
+            </select>
+          </p>
+
+          <p>
+            <label>Date souhaitée</label><br /><input
+              type="date"
+              id="dateres"
+            />
+          </p>
+          <p>
+            <label> nb Participants</label><br /><input
+              type="number"
+              id="nbp"
+              min="1"
+              max="6"
+              value="1"
+            />
+          </p>
+
+          <p>
+            Type :
+            <input type="radio" name="type" value="Individuel" checked />
+            Individuel
+            <input type="radio" name="type" value="Famille" /> Famille
+            <input type="radio" name="type" value="Groupe" /> Groupe
+          </p>
+
+          <p>
+            <label>Commentaire</label><br /><textarea
+              id="comm"
+              rows="2"
+            ></textarea>
+          </p>
+          <p>
+            <input type="checkbox" id="condi" /> J'accepte les conditions
+            de simulation
+          </p>
+         </div>
+         <div>
+          <h1 class="titre">estimation</h1>
+          <p>Prix unitaire : <strong id="pu">0 DT</strong></p>
+          <p>Participants :<strong id="nbper">0</strong></p>
+          <p>Sous-total : <strong id="st">0 DT</strong></p>
+          <p>Remise (10% dès 4 personnes) : <strong id="rem">0 TND</strong></p>
+          <p>Total : <strong id="tot">0 DT</strong></p>
+
+          <button type="button" id="calc"  class="btn btn-primary">
+            Calculer/Actualiser
+          </button>
+          <button type="submit"  class="btn btn-success">Valider la simulation</button>
+          <button type="reset" class="btn btn-dark">Réinitialiser</button>
+        </form>
+
+        <div id="err"></div>
+        <div id="recap"></div>
+ 
+    
+    </main>
+
+       
+    <footer>
+      <p>Découvrir le Cap Bon, une expérience à la fois.</p>
+      <p> © 2026 Cap Bon Explorer</p>
+      <a href="index.html">Accueil</a>
+      <a href="activites.html">Activités</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="reservation.html">Réservation</a>
+      <a href="contact.html">Contact</a>
+    
+    
+      <script src="js/app.js"></script>
+    <script src="js/reservation.js"></script>
+    </footer>
+  </body>
+</html>
