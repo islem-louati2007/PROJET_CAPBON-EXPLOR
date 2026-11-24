@@ -76,10 +76,10 @@ function filtrer() {
     var okCat = cat === "Toutes" || texte.indexOf(cat.toLowerCase()) !== -1;
 
     if (okMot && okCat) {
-      cartes[i].style.display = "";
+      carte[i].style.display = "";
       compteur++;
     } else {
-      cartes[i].style.display = "none";
+      carte[i].style.display = "none";
     }
   }
 
