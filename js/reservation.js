@@ -17,11 +17,9 @@ function calculer() {
   document.getElementById("rem").innerText = rem + " DT";
   document.getElementById("tot").innerText = tot + " DT";
 }
-
-document.getElementById("act").onchange = calculer;
-document.getElementById("nbp").oninput = calculer;
-document.getElementById("calc").onclick = calculer;
-calculer();
+document.getElementById("act").addEventListener("change", calculer);
+document.getElementById("nbp").addEventListener("input", calculer);
+document.getElementById("calc").addEventListener("click", calculer);
 
 function verifier(e) {
   e.preventDefault();
@@ -47,7 +45,7 @@ function verifier(e) {
   let auj = d.getFullYear() + "-" + mois + "-" + jour;
 
   if (nom === "" || prenom === "") {
-    err.innerText = "Nom et prénom vides";
+    err.innerText = "Nom et prenom vides";
   } else if (!email.includes("@")) {
     err.innerText = "Email invalide.";
   } else if (tel === "") {
@@ -76,12 +74,11 @@ function vider() {
   document.getElementById("err").innerText = "";
   document.getElementById("recap").innerText = "";
   document.getElementById("pu").innerText = "0 TND";
-  document.getElementById("nbper").innerText = "0";   
+  document.getElementById("nbper").innerText = "0";
   document.getElementById("st").innerText = "0 TND";
   document.getElementById("rem").innerText = "0 TND";
   document.getElementById("tot").innerText = "0 TND";
 }
 
 let f = document.getElementById("form");
-f.onreset = vider;
-f.onsubmit = verifier;
+f.addEventListener("submit", verifier);

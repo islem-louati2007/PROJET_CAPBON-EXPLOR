@@ -54,11 +54,11 @@
     </header>
 
 
-    <main class="container">
+    <main class="container card card-body">
       <div>
         <h1 class="titre">Simulateur de réservation</h1>
         <form id="form">
-          <p><label>Nom</label><br /><input type="text" id="nom" /></p>
+          <p><label >Nom</label><br /><input type="text" id="nom" /></p>
           <p><label>Prénom</label><br /><input type="text" id="prenom" /></p>
           <p>
             <label>Adresse e-mail</label><br /><input type="email" id="email" />
@@ -130,19 +130,19 @@
             de simulation
           </p>
          </div>
-         <div>
+         <div >
           <h1 class="titre">estimation</h1>
           <p>Prix unitaire : <strong id="pu">0 DT</strong></p>
           <p>Participants :<strong id="nbper">0</strong></p>
           <p>Sous-total : <strong id="st">0 DT</strong></p>
-          <p>Remise (10% dès 4 personnes) : <strong id="rem">0 TND</strong></p>
+          <p>Remise (10%  4 personnes) : <strong id="rem">0 TND</strong></p>
           <p>Total : <strong id="tot">0 DT</strong></p>
 
           <button type="button" id="calc"  class="btn btn-primary">
             Calculer/Actualiser
           </button>
           <button type="submit"  class="btn btn-success">Valider la simulation</button>
-          <button type="reset" class="btn btn-dark">Réinitialiser</button>
+          <button type="reset" class="btn btn-dark" onclick="vider()" >Réinitialiser</button>
         </form>
 
         <div id="err"></div>
